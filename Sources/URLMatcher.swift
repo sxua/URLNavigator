@@ -180,7 +180,7 @@ open class URLMatcher {
 
     let start = component.index(after: component.startIndex)
     let end = component.index(before: component.endIndex)
-    let placeholder = component[start..<end] // e.g. "<int:id>" -> "int:id"
+    let placeholder = String(component[start..<end]) // e.g. "<int:id>" -> "int:id"
 
     let typeAndKey = placeholder.components(separatedBy: ":") // e.g. ["int", "id"]
     if typeAndKey.count == 0 { // e.g. component is "<>"
